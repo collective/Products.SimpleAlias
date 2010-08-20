@@ -8,7 +8,7 @@ TODO
 - Use the event machinery follow targets workflow state (difficult)?
 - Use the Subject (keywords) of the target ?
 - Fix i18n weirdnesses (find why...) on status message
-- Add i18n/*.pot files when translations are fixed
+- Add i18n/\*.pot files when translations are fixed
 - Support for content types with Zope3 style views (not just a CMF
   skin template)
 
