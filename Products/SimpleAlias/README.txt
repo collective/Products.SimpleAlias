@@ -30,6 +30,25 @@ want to Alias and click on 'Paste as alias' in the contents view.
 It's as simple as that. SimpleAlias can only link to AT 1.3+ based objects so to
 make real use of it you will need ATContentTypes.
 
+Installation
+============
+
+``Products.SimpleAlias`` is available as egg. So you can just install it using
+``pip`` or ``easy_install``.
+
+To install it using ``zc.buildout``, just add this line in the
+``plone.recipe.zope2instance`` part of your ``buildout.cfg`` ::
+
+  [instance]
+  recipe = plone.recipe.zope2instance
+  ...
+  eggs =
+      ...
+      Products.SimpleAlias
+
+Ans, of course, re-run your buildout.
+
+
 simplealias_tool
 ================
 
