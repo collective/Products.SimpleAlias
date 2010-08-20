@@ -1,0 +1,12 @@
+Installing SimpleAlias
+
+Requirements:
+
+* Plone 3.x
+    
+Install:
+    * Copy the entire SimpleAlias folder to your zope Products folder and restart Zope
+    * Use QuickInstaller or GenericSetup to install SimleAlias into your Plone site.
+    
+Go to your portal root in ZMI and enter the security tab. Go to 'SimpleAlias: Add Alias' permission
+and configure it's roles.
