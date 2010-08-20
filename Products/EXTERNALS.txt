@@ -1,4 +1,0 @@
-# svn:externals for Products.SimpleAlias
-# created by: svn propset svn:externals -F ./EXTERNALS.TXT .
-
-SimpleAlias https://svn.plone.org/svn/collective/SimpleAlias/trunk
