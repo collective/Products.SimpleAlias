@@ -1,9 +1,8 @@
-=======
-CHANGES
+Changes
 =======
 
 TODO
-====
+----
 
 - Use z3 views
 - Use the event machinery follow targets workflow state (difficult)?
@@ -14,13 +13,13 @@ TODO
   skin template)
 
 2.1.1
-=====
+-----
 
 - Distributed as an egg (Products.SimpleAlias) [macadames]
 - added a french translation [macadames]
 
 2.1.0
-=====
+-----
 
 - When autoTitle is enabled, the alias' title/description will now
   remain in sync with the linked to content object.
@@ -29,7 +28,7 @@ TODO
   [wichert]
 
 2.0.0
-=====
+-----
 
 - Added simplealias.xml GenericSetup step.
   [glenfant]
@@ -39,7 +38,7 @@ TODO
   [lenfant]
 
 2.0RC1
-======
+------
 
 - New style templates awareness when embedding target view - stolen
   from CMFEditions
@@ -62,7 +61,7 @@ TODO
   [glenfant]
 
 1.1 (unreleased)
-================
+----------------
 
 - Plone 2.5 aware. Made it dependant on ATCT and used the new FTI
   [ender]
@@ -75,7 +74,7 @@ TODO
 
 
 1.0 (unreleased)
-================
+----------------
 
 - Plone 2.1 compatibility - naro
 - Added auto_title flag to make possible to edit title and description - zegor
