@@ -25,7 +25,7 @@ def sync_title_desc(context, event):
                 logger.info(u"Re-indexed %s" % '/'.join(obj.getPhysicalPath()))
         else:
             logger.info(u"Couldn't find %s in catalog. Re-indexed it" % '/'.join(obj.getPhysicalPath()))
-        
+
 def mark_linked_object(context, event):
     """
     Mark linked object with marker interface to keep title and description in sync.
@@ -45,7 +45,7 @@ def unmark_linked_object(context, event):
     http://plone.293351.n2.nabble.com/Event-on-object-deletion-tp3670562p3758817.html
     """
     refcat = getToolByName(context, 'reference_catalog')
-    if not context.getAlias() and getattr(context, '_alias_linked_object'):
+    if not context.getAlias() and getattr(context, '_alias_linked_object', False):
         obj = refcat.lookupObject(getattr(context, '_alias_linked_object'))
         if obj:
             if IAliasLinkedTo.providedBy(obj):
