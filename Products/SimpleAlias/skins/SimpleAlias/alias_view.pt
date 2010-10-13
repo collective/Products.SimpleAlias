@@ -32,13 +32,13 @@
 
           <tal:block tal:define="target_type python:targetObject.portal_type;
 				 target_view_macro here/targetMainMacro;
-				 showTarget python:here.getShowTarget and target_view_macro;
+				 showTarget python:here.getShowTarget() and target_view_macro;
                                  showHint here/getShowHint">
 
             <tal:check tal:condition="not: showTarget">
               <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-              <h1 class="documentFirstHeading"> 
+              <h1 class="documentFirstHeading">
                   <metal:field use-macro="python:here.widget('title', mode='view')">
                   Title
                   </metal:field>
@@ -83,14 +83,23 @@
               </div>
             </tal:check>
 
-            <tal:check
-	       tal:condition="showTarget">
+            <div id="content" tal:condition="showTarget">
               <tal:block tal:define="alias nocall:here;
 				     here python:targetObject;
 				     context nocall:here">
+                <div tal:replace="structure provider:plone.abovecontenttitle" />
+                  <h1  metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
+                      Generic KSS Title. Is rendered with class="documentFirstHeading".
+                  </h1>
+                <div tal:replace="structure provider:plone.belowcontenttitle" />
+                <div metal:use-macro="context/kss_generic_macros/macros/generic_description_view">
+                     Generic KSS Description. Is rendered with class="documentDescription".
+                </div>
+                <div tal:replace="structure provider:plone.abovecontentbody" />
                 <div metal:use-macro="target_view_macro"/>
+                <div tal:replace="structure provider:plone.belowcontentbody" />
               </tal:block>
-            </tal:check>
+            </div>
 
 
             <tal:discussions tal:condition="python: targetObject.portal_discussion.isDiscussionAllowedFor(targetObject)">
@@ -106,7 +115,7 @@
       <tal:nopermission tal:condition="python:hasPermission &lt; 1">
           <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-          <h1 class="documentFirstHeading"> 
+          <h1 class="documentFirstHeading">
               <metal:field use-macro="python:here.widget('title', mode='view')">
               Title
               </metal:field>
