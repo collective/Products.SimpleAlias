@@ -13,7 +13,7 @@ from Products.Archetypes.atapi import StringWidget
 from Products.Archetypes.atapi import TextAreaWidget
 from Products.ATContentTypes.content.base import ATCTContent
 from Products.ATContentTypes.content.document import finalizeATCTSchema
-from Products.SimpleAlias.config import TOOL_ID
+from Products.SimpleAlias.config import TOOL_ID, PROJECTNAME
 from Products.CMFDynamicViewFTI.interface import ISelectableBrowserDefault
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 
@@ -209,7 +209,7 @@ An Alias is a link to another object in the portal.
             except:
                 # We can't have a layout
                 return False
-        return target.restrictedTraverse(layout).macros.get('main', False)
+        return target.restrictedTraverse(layout).macros.get('content-core', False)
 
 
-registerType(Alias)
+registerType(Alias, PROJECTNAME)
