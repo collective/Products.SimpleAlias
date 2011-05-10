@@ -209,7 +209,12 @@ An Alias is a link to another object in the portal.
             except:
                 # We can't have a layout
                 return False
-        return target.restrictedTraverse(layout).macros.get('content-core', False)
-
+        try:
+            # works only for portal_skins templates or BrowserView with a method called macros
+            return target.restrictedTraverse(layout).macros.get('content-core', False)
+        except AttributeError:
+            # Get macros from the index. No one adds macros method to a BrowserView. 
+            return target.restrictedTraverse(layout).index.macros.get('content-core', False)
+            
 
 registerType(Alias, PROJECTNAME)
