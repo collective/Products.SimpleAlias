@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<tool-setup>
- <required tool_id="simplealias_tool"
-           class="Products.SimpleAlias.SimpleAliasTool.SimpleAliasTool"/>
-</tool-setup>
