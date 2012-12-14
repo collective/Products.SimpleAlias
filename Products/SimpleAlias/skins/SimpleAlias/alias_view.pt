@@ -102,7 +102,7 @@
             </div>
 
 
-            <tal:discussions tal:condition="python: targetObject.portal_discussion.isDiscussionAllowedFor(targetObject)">
+            <tal:discussions tal:on-error="nothing" tal:condition="python: targetObject.portal_discussion.isDiscussionAllowedFor(targetObject)">
               <p tal:define="count python:targetObject.portal_discussion.getDiscussionFor(targetObject).replyCount(targetObject)" tal:condition="python:count>0">
                 <a href="" tal:attributes="href targetObject/absolute_url"><span i18n:translate="view_comments">View comments</span> (<span tal:replace="count"/>)</a>
               </p>
