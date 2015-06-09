@@ -156,7 +156,7 @@ An Alias is a link to another object in the portal.
 
     # zegor : set folderish to false to solve folder_contents tab problem
     # isPrincipiaFolderish=ComputedAttribute(getIsPrincipiaFolderish, 1)
-    isPrincipiaFolderish = property(getIsPrincipiaFolderish)
+    isPrincipiaFolderish = 0
 
     def listFolderContents(self, spec=None, contentFilter=None, suppressHiddenFiles=0 ):
         return []
@@ -213,8 +213,8 @@ An Alias is a link to another object in the portal.
             # works only for portal_skins templates or BrowserView with a method called macros
             return target.restrictedTraverse(layout).macros.get('content-core', False)
         except AttributeError:
-            # Get macros from the index. No one adds macros method to a BrowserView. 
+            # Get macros from the index. No one adds macros method to a BrowserView.
             return target.restrictedTraverse(layout).index.macros.get('content-core', False)
-            
+
 
 registerType(Alias, PROJECTNAME)
