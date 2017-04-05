@@ -72,7 +72,7 @@
   <!-- Deleting the alias -->
   <subscriber
     for=".interfaces.IAlias
-         zope.app.container.interfaces.IObjectRemovedEvent"
+         zope.lifecycleevent.interfaces.IObjectRemovedEvent"
     handler=".subscribers.unmark_linked_object"
     />
 
