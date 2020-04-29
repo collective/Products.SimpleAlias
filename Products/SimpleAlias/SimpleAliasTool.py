@@ -1,30 +1,32 @@
 # -*- coding: utf-8 -*-
 
-import os
-from zExceptions import Unauthorized
-from Globals import InitializeClass
-from OFS.SimpleItem import SimpleItem
-from OFS.PropertyManager import PropertyManager
-import OFS.Moniker
-from OFS.CopySupport import _cb_decode
-from AccessControl import ClassSecurityInfo
 import AccessControl.Permissions
-from Products.PageTemplates.PageTemplateFile import PageTemplateFile
+import OFS.Moniker
+import os
+
+from AccessControl import ClassSecurityInfo
+from AccessControl.class_init import InitializeClass
+from OFS.CopySupport import _cb_decode
+from OFS.PropertyManager import PropertyManager
+from OFS.SimpleItem import SimpleItem
+from Products.Archetypes.utils import shasattr
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.utils import getToolByName
-from Products.Archetypes.utils import shasattr
-from Products.SimpleAlias.config import TOOL_ID
-from Products.SimpleAlias.Permissions import ADD_ALIAS_PERMISSION
-from Products.SimpleAlias import logger
+from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from Products.SimpleAlias import SimpleAliasMessageFactory as _
+from Products.SimpleAlias import logger
+from Products.SimpleAlias.Permissions import ADD_ALIAS_PERMISSION
+from Products.SimpleAlias.config import TOOL_ID
+from zExceptions import Unauthorized
 
 _zmi = os.path.join(os.path.dirname(__file__), 'zmi')
+
 
 class SimpleAliasTool(UniqueObject, SimpleItem, PropertyManager):
     """Utilities for the SimpleAlias type"""
 
     id = TOOL_ID
-    meta_type= 'SimpleAlias tool'
+    meta_type = 'SimpleAlias tool'
     plone_tool = 1
 
     _properties = (
